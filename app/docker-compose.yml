@@ -1,0 +1,11 @@
+version: "3.6"
+
+services:
+  app:
+    container_name: "app"
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command: uvicorn route:app --host 0.0.0.0  --port 8001
+    ports:
+      - 8001:8001
